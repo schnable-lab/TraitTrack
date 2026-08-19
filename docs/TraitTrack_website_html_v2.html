@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TraitTrack Guide</title>
+
+<link rel="stylesheet" href="TraitTrack_website_css_v2.css">
+
+<style>
+
+/* =========================================================
+   VERSION 2 — NAVIGATION
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 2px;
+  padding: 0 20px;
+
+  background: white;
+  border-bottom: 1px solid var(--border);
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-btn {
+  border: none;
+  background: transparent;
+
+  padding: 17px 14px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--text);
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.nav-dropdown-btn:hover,
+.nav-dropdown:hover .nav-dropdown-btn {
+  background: #f3f6f4;
+  color: var(--accent);
+}
+
+.dropdown-content {
+  display: none;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  min-width: 235px;
+
+  background: white;
+
+  border: 1px solid var(--border);
+  border-top: none;
+
+  border-radius: 0 0 10px 10px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+  padding: 8px 0;
+}
+
+.nav-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+
+  padding: 10px 16px;
+
+  color: var(--text);
+  text-decoration: none;
+
+  font-size: 14px;
+  line-height: 1.4;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.dropdown-content a:hover {
+  background: #f3f6f4;
+  color: var(--accent);
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .top-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+
+    padding: 0 10px;
+
+    scrollbar-width: thin;
+  }
+
+  .nav-dropdown-btn {
+    padding: 15px 11px;
+    font-size: 13px;
+  }
+
+  .dropdown-content {
+    position: fixed;
+
+    left: 10px;
+    right: 10px;
+
+    min-width: auto;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    margin-top: 0;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .top-nav {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block !important;
+  }
+
+}
+
+
+/* =========================================================
+   CONTENT / NAVIGATION SPACING
+   ========================================================= */
+
+main {
+  width: 100%;
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
+
+/* =========================================================
+   VERSION LABEL
+   ========================================================= */
+
+.version-label {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  padding: 5px 10px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: var(--accent);
+
+  background: #f3f6f4;
+}
+
+
+/* =========================================================
+   SEARCH HIGHLIGHT
+   ========================================================= */
+
+.search-match {
+  background: #fff3a8;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+
+/* =========================================================
+   SIMPLE TABLE
+   ========================================================= */
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 14px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.data-table th {
+  font-weight: 700;
+  background: #f3f6f4;
+}
+
+
+/* =========================================================
+   FEATURE LIST
+   ========================================================= */
+
+.feature-list {
+  display: grid;
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.feature-item {
+  padding: 16px 18px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: white;
+}
+
+.feature-item strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+/* =========================================================
+   SUPPORT BOX
+   ========================================================= */
+
+.support-box {
+  margin-top: 30px;
+  padding: 22px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  background: #f7f9f8;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     HEADER
+     ======================================================= -->
+
+<header class="header">
+
+  <div class="header-inner">
+
+    <a class="logo" href="#top">
+      <span class="logo-mark">T</span>TraitTrack
+    </a>
+
+    <span class="tagline">
+      Guide & documentation
+    </span>
+
+    <div class="search">
+
+      <span>⌕</span>
+
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search the guide…"
+      >
+
+    </div>
+
+
+    <!-- GitHub -->
+
+    <a
+      class="github-link"
+      href="https://github.com/schnable-lab/TraitTrack/tree/main"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="TraitTrack GitHub repository"
+      title="View TraitTrack on GitHub"
+    >
+
+      <svg
+        class="github-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577
+        0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756
+        -1.089-.745.084-.73.084-.73 1.205.085 1.84 1.237 1.84 1.237
+        1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605
+        -2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22
+        -.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23
+        .957-.266 1.98-.399 3-.405 1.02.006 2.043.139 3 .405
+        2.29-1.552 3.295-1.23 3.295-1.23.655 1.653.244 2.873.12 3.176
+        .77.84 1.233 1.91 1.233 3.22 0 4.61-2.805 5.625-5.475 5.92
+        .43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286
+        0 .322.216.696.825.576C20.565 21.796 24 17.297 24 12
+        24 5.37 18.63 0 12 0z"/>
+
+      </svg>
+
+    </a>
+
+  </div>
+
+</header>
+
+
+
+<!-- =======================================================
+     TOP NAVIGATION
+     ======================================================= -->
+
+<nav class="top-nav" id="topNav">
+
+
+  <!-- OVERVIEW -->
+
+  <div class="nav-dropdown">
+
+    <button class="nav-dropdown-btn">
+      Overview
+    </button>
+
+    <div class="dropdown-content">
+
+      <a href="#overview">
+        What is TraitTrack?
+      </a>
+
+      <a href="#unique">
+        What makes TraitTrack unique?
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- GETTING STARTED -->
+
+  <div class="nav-dropdown">
+
+    <button class="nav-dropdown-btn">
+      Getting Started ▾
+    </button>
+
+    <div class="dropdown-content">
+
+      <a href="#installation">
+        Installation
+      </a>
+
+      <a href="#first-project">
+        First Project
+      </a>
+
+      <a href="#collaborators">
+        Collaborators
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- USING TRAITTRACK -->
+
+  <div class="nav-dropdown">
+
+    <button class="nav-dropdown-btn">
+      Using TraitTrack ▾
+    </button>
+
+    <div class="dropdown-content">
+
+      <a href="#data-management">
+        Data Management
+      </a>
+
+      <a href="#field-data">
+        Field Data
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- SUPPORT -->
+
+  <div class="nav-dropdown">
+
+    <button class="nav-dropdown-btn">
+      Support
+    </button>
+
+    <div class="dropdown-content">
+
+      <a href="#support">
+        Troubleshooting
+      </a>
+
+      <a href="#reference">
+        Reference
+      </a>
+
+    </div>
+
+  </div>
+
+
+</nav>
+
+
+
+<!-- =======================================================
+     MAIN CONTENT
+     ======================================================= -->
+
+<main id="top">
+
+
+  <div class="breadcrumb">
+    TraitTrack Guide
+  </div>
+
+
+
+  <!-- =====================================================
+       VERSION 2 HERO
+       ===================================================== -->
+
+  <section class="hero" id="overview">
+
+    <div class="eyebrow">
+      TraitTrack Guide
+    </div>
+
+    <h1>
+      Collect. Collaborate. Track.
+    </h1>
+
+    <p>
+      TraitTrack is a collaborative field-phenotyping
+      application designed to help researchers collect,
+      synchronize, manage, and review plant trait data directly
+      during field experiments.
+    </p>
+
+    <a class="button" href="#installation">
+      Get started →
+    </a>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       OVERVIEW — WHAT IS TRAITTRACK?
+       ===================================================== -->
+
+  <section>
+
+    <h2>
+      What is TraitTrack?
+    </h2>
+
+    <p class="lead">
+      TraitTrack is an iOS application for collecting
+      structured phenotypic observations in the field.
+      Observations are organized within shared projects rather
+      than remaining isolated on individual devices.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <div class="card-icon">
+          📱
+        </div>
+
+        <h3>
+          Field collection
+        </h3>
+
+        <p>
+          Record trait observations directly against plots,
+          entries, or other experimental units while working
+          in the field.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+          👥
+        </div>
+
+        <h3>
+          Collaboration
+        </h3>
+
+        <p>
+          Multiple collaborators can contribute observations
+          to the same project using their own devices.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+          ☁️
+        </div>
+
+        <h3>
+          Synchronization
+        </h3>
+
+        <p>
+          Local observations can be synchronized with a shared
+          project backend as connectivity becomes available.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="card-icon">
+          📷
+        </div>
+
+        <h3>
+          Rich observations
+        </h3>
+
+        <p>
+          Observations can include photographs, location
+          information, notes, and other project metadata.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       WHAT MAKES TRAITTRACK UNIQUE?
+       ===================================================== -->
+
+  <section id="unique">
+
+    <h2>
+      What makes TraitTrack unique?
+    </h2>
+
+    <p class="lead">
+      TraitTrack is built around the reality of collaborative
+      field phenotyping: several people may be collecting data
+      at the same time, connectivity may be unreliable, and
+      project owners need to know what has been collected before
+      the field season is over.
+    </p>
+
+
+    <div class="feature-list">
+
+      <div class="feature-item">
+
+        <strong>
+          One shared project
+        </strong>
+
+        Multiple devices contribute to a common project rather
+        than producing separate datasets that must be manually
+        merged later.
+
+      </div>
+
+
+      <div class="feature-item">
+
+        <strong>
+          Field-first data collection
+        </strong>
+
+        TraitTrack is designed around plot- and trait-level
+        observations collected where the experiment is happening.
+
+      </div>
+
+
+      <div class="feature-item">
+
+        <strong>
+          Near-real-time project awareness
+        </strong>
+
+        Project information can be synchronized between
+        collaborators, allowing project owners to monitor
+        collection while it is still underway.
+
+      </div>
+
+
+      <div class="feature-item">
+
+        <strong>
+          Observation provenance
+        </strong>
+
+        Records retain information about the observation,
+        contributor, experimental unit, trait, and relevant
+        timestamps.
+
+      </div>
+
+
+      <div class="feature-item">
+
+        <strong>
+          Images as project data
+        </strong>
+
+        Photographs can remain associated with the observation
+        they document rather than existing as unrelated files
+        in a device photo library.
+
+      </div>
+
+
+      <div class="feature-item">
+
+        <strong>
+          Breeding-data interoperability
+        </strong>
+
+        TraitTrack supports BrAPI-based workflows so field
+        observations can connect with broader breeding-data
+        systems.
+
+      </div>
+
+    </div>
+
+
+    <div class="callout">
+
+      <strong>
+        The central idea:
+      </strong>
+
+      TraitTrack treats field collection as a collaborative,
+      continuously updated project rather than a collection of
+      disconnected spreadsheets.
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       GETTING STARTED
+       ===================================================== -->
+
+  <section>
+
+    <h2>
+      Getting Started
+    </h2>
+
+    <p class="lead">
+      Set up TraitTrack, create the project structure, and give
+      collaborators access before beginning field collection.
+    </p>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       INSTALLATION
+       ===================================================== -->
+
+  <section id="installation">
+
+    <h2>
+      Installation
+    </h2>
+
+    <p class="lead">
+      TraitTrack uses an iOS client for field collection and can
+      connect to a shared cloud-based backend for collaborative
+      project storage and synchronization.
+    </p>
+
+
+    <h3>
+      iOS application
+    </h3>
+
+    <p>
+      TraitTrack is designed for Apple devices running
+      <strong>iOS 17.0 or later</strong>. The application is
+      built with Swift and SwiftUI.
+    </p>
+
+
+    <div class="callout">
+
+      <strong>
+        Release status:
+      </strong>
+
+      Installation instructions should be updated to reflect
+      the current distribution method once the application is
+      publicly released. Earlier development documentation
+      described signed builds and TestFlight distribution.
+
+    </div>
+
+
+    <h3>
+      Cloud-based collaboration
+    </h3>
+
+    <p>
+      For collaborative projects, TraitTrack can use a dedicated
+      backend consisting of a REST API and shared database.
+      The documented server architecture uses
+      <strong>FastAPI</strong> with <strong>PostgreSQL</strong>.
+    </p>
+
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>
+          TraitTrack app
+        </h3>
+
+        <p>
+          Installed on each collaborator's iOS device and used
+          for field data collection.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Cloud API
+        </h3>
+
+        <p>
+          Provides the shared interface through which devices
+          exchange project and observation data.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          PostgreSQL
+        </h3>
+
+        <p>
+          Provides persistent storage for the collaborative
+          project data.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Optional media storage
+        </h3>
+
+        <p>
+          Server-based deployments can use Amazon S3 for
+          photographs and other media attachments.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <h3>
+      Google Drive
+    </h3>
+
+    <p>
+      TraitTrack can also work with Google Drive as a shared
+      storage provider. This is different from using a dedicated
+      collaboration server for live reconciliation of
+      concurrent changes.
+    </p>
+
+
+    <div class="callout warning">
+
+      <strong>
+        Before field collection:
+      </strong>
+
+      Confirm that every device can access the intended project,
+      that required project information is available locally,
+      and that collaborators are signed into the correct accounts.
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       FIRST PROJECT
+       ===================================================== -->
+
+  <section id="first-project">
+
+    <h2>
+      First Project
+    </h2>
+
+    <p class="lead">
+      A TraitTrack project defines the experimental structure,
+      traits, collaborators, and observations that will be
+      collected during the study.
+    </p>
+
+
+    <h3>
+      Create the project
+    </h3>
+
+    <div class="steps">
+
+      <div class="step">
+
+        <h3>
+          1. Create a project
+        </h3>
+
+        <p>
+          Create a new project and provide the information
+          required to identify the experiment.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <h3>
+          2. Define the experimental units
+        </h3>
+
+        <p>
+          Organize the project around the plots, entries, or
+          other experimental units that will receive observations.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <h3>
+          3. Define the traits
+        </h3>
+
+        <p>
+          Specify which phenotypic variables will be measured
+          and how their values should be recorded.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <h3>
+          4. Add collaborators
+        </h3>
+
+        <p>
+          Give each field collector access to the project before
+          collection begins.
+        </p>
+
+      </div>
+
+    </div>
+
+
+
+    <h3>
+      TraitTrack data format
+    </h3>
+
+    <p>
+      TraitTrack uses a structured project model. At a basic
+      level, an observation connects an experimental unit to a
+      trait and a recorded value.
+    </p>
+
+
+    <table class="data-table">
+
+      <thead>
+
+        <tr>
+          <th>Field</th>
+          <th>Purpose</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr>
+
+          <td>
+            Project
+          </td>
+
+          <td>
+            Identifies the experiment or study.
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            Plot / entry
+          </td>
+
+          <td>
+            Identifies the experimental unit being observed.
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            Trait
+          </td>
+
+          <td>
+            Identifies what is being measured.
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            Trait format
+          </td>
+
+          <td>
+            Defines how the observation is represented, such as
+            numeric, categorical, Boolean, date, scale, location,
+            or media.
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            Value
+          </td>
+
+          <td>
+            Contains the actual observation recorded in the field.
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            Observer
+          </td>
+
+          <td>
+            Identifies the collaborator who recorded the observation.
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            Timestamp
+          </td>
+
+          <td>
+            Records when the observation was collected or modified.
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            Media / metadata
+          </td>
+
+          <td>
+            Connects photographs, location information, notes,
+            or other supporting information to the observation.
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+
+    <h3>
+      Supported trait types
+    </h3>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>
+          Basic
+        </h3>
+
+        <p>
+          Text, numeric, percentage, angle, Boolean, date,
+          counter, and scale values.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Categorical
+        </h3>
+
+        <p>
+          Qualitative observations and categorical scoring systems.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Field measurements
+        </h3>
+
+        <p>
+          Disease ratings, stopwatch measurements, and
+          location/GNSS observations.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Media
+        </h3>
+
+        <p>
+          Photographs, audio, and video associated with observations.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Identification
+        </h3>
+
+        <p>
+          Barcode-based identification of field material or
+          experimental units.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Hardware-assisted
+        </h3>
+
+        <p>
+          Sensor and external-camera workflows where supported
+          by the application.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="callout">
+
+      <strong>
+        Best practice:
+      </strong>
+
+      Define trait names, units, scoring scales, and expected
+      formats before collection starts. Consistent definitions
+      make the resulting dataset much easier to analyze.
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       COLLABORATORS
+       ===================================================== -->
+
+  <section id="collaborators">
+
+    <h2>
+      Collaborators
+    </h2>
+
+    <p class="lead">
+      TraitTrack is designed for multiple people to collect
+      observations within the same project.
+    </p>
+
+
+    <div class="steps">
+
+      <div class="step">
+
+        <h3>
+          Project owner
+        </h3>
+
+        <p>
+          Creates and manages the project, configures the
+          experimental structure, and monitors overall collection.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <h3>
+          Field collaborators
+        </h3>
+
+        <p>
+          Use their own iOS devices to collect observations,
+          photographs, notes, and supported measurements.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <h3>
+          Shared project state
+        </h3>
+
+        <p>
+          Collaborators contribute to the same project rather
+          than creating independent datasets for later manual
+          merging.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="callout">
+
+      <strong>
+        Important:
+      </strong>
+
+      Collaboration depends on synchronization. A record
+      collected on a device may remain local until the device
+      has connectivity and completes its synchronization cycle.
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       USING TRAITTRACK
+       ===================================================== -->
+
+  <section>
+
+    <h2>
+      Using TraitTrack
+    </h2>
+
+    <p class="lead">
+      TraitTrack has two primary uses: managing the project and
+      collecting observations in the field.
+    </p>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       DATA MANAGEMENT
+       ===================================================== -->
+
+  <section id="data-management">
+
+    <h2>
+      Data Management
+    </h2>
+
+    <p class="lead">
+      Data management in TraitTrack covers synchronization,
+      review, project oversight, corrections, and export.
+    </p>
+
+
+    <h3>
+      Synchronization
+    </h3>
+
+    <p>
+      TraitTrack uses near-real-time synchronization rather than
+      instantaneous synchronization. The client initiates a
+      reconciliation cycle at a nominal <strong>30-second
+      interval</strong> while the project is active, subject to
+      connectivity and backend response time.
+    </p>
+
+
+    <div class="steps">
+
+      <div class="step">
+
+        <h3>
+          Push
+        </h3>
+
+        <p>
+          Local observations and project changes are sent to
+          the shared backend.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <h3>
+          Reconcile
+        </h3>
+
+        <p>
+          The backend combines changes and maintains the shared
+          project state.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <h3>
+          Pull
+        </h3>
+
+        <p>
+          Devices retrieve the current reconciled project state.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <h3>
+          Review
+        </h3>
+
+        <p>
+          Project owners can use the resulting project state to
+          monitor progress and identify issues.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <h3>
+      Review and quality control
+    </h3>
+
+    <p>
+      Project owners should review the dataset during collection,
+      not only after the field season. Incomplete areas,
+      questionable observations, synchronization problems, and
+      supporting photographs can be investigated while field
+      access remains available.
+    </p>
+
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>
+          Completion
+        </h3>
+
+        <p>
+          Identify plots, traits, or areas that remain incomplete.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Collaborator activity
+        </h3>
+
+        <p>
+          Check whether collaborators are contributing and
+          synchronizing their devices.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Observation review
+        </h3>
+
+        <p>
+          Investigate suspicious or unexpected observations.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Image review
+        </h3>
+
+        <p>
+          Use provenance-linked photographs to help verify
+          observations.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <h3>
+      Corrections and conflicts
+    </h3>
+
+    <p>
+      Multiple users may contribute to the same project.
+      TraitTrack uses unique record identifiers and explicit
+      update rules to prevent duplicate records when changes
+      are transmitted repeatedly.
+    </p>
+
+    <p>
+      When concurrent edits produce a conflict, use the
+      application's conflict-resolution workflow rather than
+      manually combining competing versions in separate files.
+    </p>
+
+
+    <h3>
+      Export
+    </h3>
+
+    <p>
+      Project data can be exported for downstream analysis.
+      TraitTrack supports CSV export and database-oriented
+      workflows, as well as media bundles and project backups.
+    </p>
+
+
+    <div class="callout">
+
+      <strong>
+        Recommended workflow:
+      </strong>
+
+      Collect → Synchronize → Review → Quality control →
+      Export → Analyze
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       FIELD DATA
+       ===================================================== -->
+
+  <section id="field-data">
+
+    <h2>
+      Field Data
+    </h2>
+
+    <p class="lead">
+      TraitTrack is designed to make structured phenotypic
+      observations practical to collect directly in the field.
+    </p>
+
+
+    <h3>
+      Collect an observation
+    </h3>
+
+    <div class="steps">
+
+      <div class="step">
+
+        <h3>
+          1. Select the project
+        </h3>
+
+        <p>
+          Open the project associated with the experiment.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <h3>
+          2. Navigate to the experimental unit
+        </h3>
+
+        <p>
+          Select the appropriate plot, entry, or other
+          experimental unit.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <h3>
+          3. Select the trait
+        </h3>
+
+        <p>
+          Choose the trait being measured.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <h3>
+          4. Record the value
+        </h3>
+
+        <p>
+          Enter the observation using the trait's defined format.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <h3>
+          5. Add supporting information
+        </h3>
+
+        <p>
+          When appropriate, attach photographs, location
+          information, notes, or other supported media.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <h3>
+          6. Save and continue
+        </h3>
+
+        <p>
+          Save the observation and proceed to the next
+          experimental unit.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <h3>
+      Working offline
+    </h3>
+
+    <p>
+      Field sites may have unreliable or nonexistent network
+      connectivity. TraitTrack is designed so that collection
+      can continue when a connection is unavailable, with
+      synchronization occurring when connectivity returns.
+    </p>
+
+
+    <div class="callout warning">
+
+      <strong>
+        Before leaving for the field:
+      </strong>
+
+      Make sure the project information required for collection
+      is available on the device. Do not assume that a device
+      will be able to download project information after you
+      arrive at a location without connectivity.
+
+    </div>
+
+
+    <h3>
+      Photographs and media
+    </h3>
+
+    <p>
+      Photographs can be attached to observations to preserve
+      visual evidence of the phenotype or field condition.
+      Images can be especially useful for disease scoring,
+      abiotic stress, developmental stages, and quality control.
+    </p>
+
+
+    <h3>
+      Location and GNSS
+    </h3>
+
+    <p>
+      TraitTrack can use iOS Core Location to record GNSS
+      coordinates for location-aware traits. Projects should
+      document how location information is expected to be
+      interpreted and used.
+    </p>
+
+
+    <h3>
+      Field data best practices
+    </h3>
+
+    <ul>
+
+      <li>
+        Use consistent trait definitions and units.
+      </li>
+
+      <li>
+        Confirm that you are recording against the correct
+        experimental unit.
+      </li>
+
+      <li>
+        Attach photographs when visual evidence will be useful.
+      </li>
+
+      <li>
+        Synchronize whenever a stable connection is available.
+      </li>
+
+      <li>
+        Check for incomplete or questionable observations before
+        leaving the field.
+      </li>
+
+    </ul>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       SUPPORT
+       ===================================================== -->
+
+  <section id="support">
+
+    <h2>
+      Support
+    </h2>
+
+    <p class="lead">
+      If something is not working as expected, first determine
+      whether the problem is related to the device, project
+      access, synchronization, or the observation itself.
+    </p>
+
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>
+          Data is not synchronizing
+        </h3>
+
+        <p>
+          Check the network connection, pending uploads, and
+          synchronization status. Try again when a stable
+          connection is available.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          A project is missing
+        </h3>
+
+        <p>
+          Confirm that you are signed into the correct account
+          and have been added to the project as a collaborator.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          An observation is missing
+        </h3>
+
+        <p>
+          Check the device where the observation was collected
+          and its synchronization status before assuming the
+          record has been lost.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          An image is still uploading
+        </h3>
+
+        <p>
+          Observation synchronization and large media transfers
+          may complete at different times. Check the media
+          transfer state separately.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Conflicting edits
+        </h3>
+
+        <p>
+          Use the application's conflict-detection and
+          resolution workflow rather than manually merging
+          competing records.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Unexpected behavior
+        </h3>
+
+        <p>
+          Record the application version, device, project,
+          steps that produced the problem, and any relevant
+          error message.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="support-box">
+
+      <h3>
+        When reporting a problem
+      </h3>
+
+      <p>
+        Include enough information for the problem to be
+        reproduced. At minimum, provide the application version,
+        iOS version, device type, project context, what you
+        expected to happen, and what actually happened.
+      </p>
+
+      <p>
+        For synchronization problems, also note whether the
+        device was online and whether other collaborators were
+        able to synchronize successfully.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       REFERENCE
+       ===================================================== -->
+
+  <section id="reference">
+
+    <h2>
+      Reference
+    </h2>
+
+    <p class="lead">
+      Keep technical details here that need to remain consistent
+      across the guide.
+    </p>
+
+
+    <div class="grid">
+
+      <div class="card">
+
+        <h3>
+          Application
+        </h3>
+
+        <p>
+          TraitTrack Version 1.2.0 (build 1.1), based on the
+          current manuscript documentation.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Client
+        </h3>
+
+        <p>
+          Swift 5 and SwiftUI on iOS.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Collaboration backend
+        </h3>
+
+        <p>
+          FastAPI and PostgreSQL, with optional Amazon S3
+          media storage.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <h3>
+          Interoperability
+        </h3>
+
+        <p>
+          BrAPI support connects TraitTrack with breeding-data
+          systems and existing breeding workflows.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="callout warning">
+
+      <strong>
+        Version note:
+      </strong>
+
+      Update this guide whenever the application's interface,
+      release status, supported operating systems, data model,
+      synchronization behavior, or backend architecture changes.
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       FEEDBACK
+       ===================================================== -->
+
+  <div class="feedback">
+
+    <strong>
+      Was this guide helpful?
+    </strong>
+
+    <br>
+
+
+    <button
+      onclick="this.textContent='Thanks!'"
+      style="
+        margin-top:12px;
+        border:1px solid var(--border);
+        background:white;
+        padding:9px 16px;
+        border-radius:8px;
+        cursor:pointer;
+      "
+    >
+      👍 Yes
+    </button>
+
+
+    <button
+      onclick="this.textContent='Thanks for the feedback!'"
+      style="
+        margin-top:12px;
+        border:1px solid var(--border);
+        background:white;
+        padding:9px 16px;
+        border-radius:8px;
+        cursor:pointer;
+      "
+    >
+      👎 No
+    </button>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="footer">
+
+    <p>
+      <strong>
+        TraitTrack Guide
+      </strong>
+
+      · Documentation for collaborative field phenotyping
+      and plant trait data collection.
+    </p>
+
+    <p>
+      Content should be updated as the TraitTrack application,
+      backend, and release status change.
+    </p>
+
+  </footer>
+
+
+</main>
+
+
+
+<!-- =======================================================
+     JAVASCRIPT
+     ======================================================= -->
+
+<script src="TraitTrack_website_js_v2.js"></script>
+
+</body>
+</html>
