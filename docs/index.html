@@ -7,7 +7,7 @@
 
 <title>TraitTrack Guide</title>
 
-<link rel="stylesheet" href="TraitTrack_website_css_v2.css">
+<link rel="stylesheet" href="TraitTrack_website_css_v3.css">
 
 <style>
 
@@ -277,6 +277,20 @@ section {
   background: #f7f9f8;
 }
 
+
+.video-placeholder {
+  margin: 18px 0 28px;
+  padding: 16px 18px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  background: #f7f9f8;
+  color: var(--text);
+}
+.video-placeholder span {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
 </style>
 
 </head>
@@ -423,12 +437,12 @@ section {
 
     <div class="dropdown-content">
 
-      <a href="#data-management">
-        Data Management
-      </a>
-
       <a href="#field-data">
         Field Data
+      </a>
+
+      <a href="#data-management">
+        Data Management
       </a>
 
     </div>
@@ -1301,396 +1315,289 @@ section {
 
 
 
-  <!-- =====================================================
-       DATA MANAGEMENT
-       ===================================================== -->
 
   <section id="data-management">
-
-    <h2>
-      Data Management
-    </h2>
-
+    <h2>Data Management</h2>
     <p class="lead">
-      Data management in TraitTrack covers synchronization,
-      review, project oversight, corrections, and export.
+      Data Management contains export, progress, collaboration, utility, settings, update,
+      and application-reference tools.
     </p>
 
-
-    <h3>
-      Synchronization
-    </h3>
-
+    <h3 id="share-package">Share Package</h3>
+    <p class="lead">Completion dashboard</p>
     <p>
-      TraitTrack uses near-real-time synchronization rather than
-      instantaneous synchronization. The client initiates a
-      reconciliation cycle at a nominal <strong>30-second
-      interval</strong> while the project is active, subject to
-      connectivity and backend response time.
+      Share Package is the export flow used by the Plot Library, Field Run, and standalone
+      Share Package menu.
     </p>
+    <ul>
+      <li><strong>Format</strong> — Database (long format) or Table (wide format).</li>
+      <li><strong>Field columns</strong> — Only unique identifier or All imported columns.</li>
+      <li><strong>Traits</strong> — Only active traits or All traits.</li>
+      <li><strong>Bundle media data with export file</strong> — includes attached photos, videos, and audio.</li>
+      <li><strong>Output name</strong> — traittrack-export, saved as traittrack-export.zip.</li>
+      <li><strong>Overwrite previous report</strong> — replaces the existing export.</li>
+    </ul>
+    <p>
+      If a staged export with the requested name already exists, the new file uses the next
+      available numbered name.
+    </p>
+    <h4>Which format to choose</h4>
+    <ul>
+      <li><strong>Database (long)</strong> — one observation per row with metadata such as trait,
+        value, timestamp, person, device_name, attached_photo, and additional_info. Use it when
+        every reading needs to remain traceable or for database/R/Python analysis.</li>
+      <li><strong>Table (wide)</strong> — one column per trait alongside plot identifiers such as
+        plot, plot_id, row, column, germplasm, and pedigree. Use it for quick spreadsheet review.</li>
+    </ul>
+    <div class="video-placeholder"><strong>Video 15</strong><br><span>videos/video15.mp4</span></div>
 
+    <h3 id="progress-board">Progress Board</h3>
+    <p class="lead">Completion dashboard</p>
+    <p>The Progress Board is a read-only overview of the current project. It reports:</p>
+    <ul>
+      <li>Fields</li><li>Entries</li><li>Data</li><li>Hours</li><li>Collectors</li>
+      <li>Photos</li><li>Busiest Day</li><li>Most Observed</li><li>Recent Activity</li>
+    </ul>
+    <p>Use it at the end of each field session to confirm progress before syncing or exporting.</p>
+    <div class="video-placeholder"><strong>Video 20</strong><br><span>videos/video20.mp4</span></div>
 
-    <div class="steps">
+    <h3 id="team-sync">Team Sync &amp; Team Workspace</h3>
+    <p>
+      TraitTrack supports Personal Projects and Team Collaboration. Personal Projects need no
+      backend, sign-in, or invite; data stays local and can be shared through Export. Team
+      Collaboration connects multiple iPhones or iPads to the same live project.
+    </p>
+    <h4>Team setup checklist</h4>
+    <ol>
+      <li>Paste the backend API URL and tap <strong>Check Backend</strong>. The URL must be a
+        TraitTrack sync API endpoint, such as <code>http://192.168.x.x:8770</code> on a Mac Wi-Fi
+        network. Google Drive, Docs, iCloud, Dropbox, and OneDrive links are not valid here.</li>
+      <li>Tap <strong>Sign In to Collaboration</strong>.</li>
+      <li>The owner creates the shared project and invite; teammates scan the invite QR or paste the invite code.</li>
+      <li>Tap <strong>Sync Now</strong> once. Active devices then sync roughly every 30 seconds and
+        media moves through the shared media folder.</li>
+    </ol>
+    <h4>What syncs and how</h4>
+    <ul>
+      <li>Auto-sync runs approximately every 30 seconds while the app is open.</li>
+      <li>Media sync follows the same cycle. An owner can set a photo mirror folder in Google Drive,
+        OneDrive, Dropbox, or iCloud Drive.</li>
+      <li>Prepared CSV/ZIP exports move through the backend files API when a sync runs.</li>
+    </ul>
+    <h4>Owner Dashboard</h4>
+    <ul>
+      <li>Backend</li><li>Cloud Provider</li><li>Team Presence</li><li>Sync Queue</li>
+      <li>Shared Media</li><li>Plot Progress</li>
+    </ul>
+    <p>Deployment is blocked until the backend URL is correct; the dashboard reports this at the top.</p>
+    <p><strong>Menu 11 — Team Sync</strong> is a shortcut into the same collaboration workspace,
+      opening directly at the sync section of Settings.</p>
+    <div class="video-placeholder"><strong>Video 2</strong><br><span>videos/video2.mp4</span></div>
 
-      <div class="step">
+    <h3 id="team-timers">Team Timers</h3>
+    <p>
+      Team Timers is a lightweight board of stopwatches for crews or field tasks. Reset All and
+      Start All control every timer, and Add Team creates a named timer.
+    </p>
+    <p>The Board Actions menu includes Rename board, Edit board, Add a timer, Web Share, Export,
+      Copy board, and Delete board.</p>
+    <div class="video-placeholder"><strong>Video 14</strong><br><span>videos/video14.mp4</span></div>
 
-        <h3>
-          Push
-        </h3>
+    <h3 id="calculator">Calculator</h3>
+    <p>
+      The Calculator is a standard calculator with a History button in the top bar for returning
+      to previous calculations recorded during the field run.
+    </p>
+    <div class="video-placeholder"><strong>Video 16</strong><br><span>videos/video16.mp4</span></div>
 
-        <p>
-          Local observations and project changes are sent to
-          the shared backend.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <h3>
-          Reconcile
-        </h3>
-
-        <p>
-          The backend combines changes and maintains the shared
-          project state.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <h3>
-          Pull
-        </h3>
-
-        <p>
-          Devices retrieve the current reconciled project state.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <h3>
-          Review
-        </h3>
-
-        <p>
-          Project owners can use the resulting project state to
-          monitor progress and identify issues.
-        </p>
-
-      </div>
-
+    <h3 id="settings">Settings</h3>
+    <p>
+      Settings opens with Search Settings followed by grouped subsections for identity,
+      collaboration, field tools, interface, movement, navigation, audio, BrAPI, diagnostics,
+      storage, and preview features.
+    </p>
+    <div class="feature-list">
+      <div class="feature-item"><strong>Collector Identity</strong> Collector name, 24-hour check-in,
+        and device label used in export metadata and team records.</div>
+      <div class="feature-item"><strong>Team Workspace</strong> Collaboration configuration described above.</div>
+      <div class="feature-item"><strong>Tool Switchboard</strong> Field Help, Data Matrix, Find Empty Plot, and ID Jump.</div>
+      <div class="feature-item"><strong>Interface Theme</strong> Visual Palette, App Language, Field Run Layout, and Dashboard Buttons.</div>
+      <div class="feature-item"><strong>Field Movement</strong> Advance after last trait, Start each plot at first trait,
+        Block empty-plot movement, Swap arrow lanes, Use volume buttons, and Use ordinal day.</div>
+      <div class="feature-item"><strong>Plot Navigation</strong> Position Source and nearest-plot jump.</div>
+      <div class="feature-item"><strong>Audio Feedback</strong> Button sounds and Read entries aloud.</div>
+      <div class="feature-item"><strong>Breeding API Links (BrAPI)</strong> Server profile, import, OIDC, version/tuning,
+        cache invalidation, newer-local-value preference, connection test, studies, and observation actions.</div>
+      <div class="feature-item"><strong>Device Diagnostics</strong> Import/export paths, share sheet, readiness report,
+        restore preferences, and anonymous crash tag.</div>
+      <div class="feature-item"><strong>Data Storage</strong> Working data, backup/restore, and Clear Local Workspace.</div>
+      <div class="feature-item"><strong>Preview Lab</strong> Repeat Reading Safeguards, field-wide audio notes,
+        Code Scanner, Breeding API Import, and media remote navigation.</div>
     </div>
+    <div class="video-placeholder"><strong>Video 3</strong><br><span>videos/video3.mp4</span></div>
 
-
-    <h3>
-      Review and quality control
-    </h3>
-
+    <h3 id="whats-new">What's New</h3>
     <p>
-      Project owners should review the dataset during collection,
-      not only after the field season. Incomplete areas,
-      questionable observations, synchronization problems, and
-      supporting photographs can be investigated while field
-      access remains available.
+      The What's New screen lists short, dated release notes for the current iOS build.
     </p>
 
-
-    <div class="grid">
-
-      <div class="card">
-
-        <h3>
-          Completion
-        </h3>
-
-        <p>
-          Identify plots, traits, or areas that remain incomplete.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>
-          Collaborator activity
-        </h3>
-
-        <p>
-          Check whether collaborators are contributing and
-          synchronizing their devices.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>
-          Observation review
-        </h3>
-
-        <p>
-          Investigate suspicious or unexpected observations.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <h3>
-          Image review
-        </h3>
-
-        <p>
-          Use provenance-linked photographs to help verify
-          observations.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <h3>
-      Corrections and conflicts
-    </h3>
-
+    <h3 id="app-info">App Info</h3>
     <p>
-      Multiple users may contribute to the same project.
-      TraitTrack uses unique record identifiers and explicit
-      update rules to prevent duplicate records when changes
-      are transmitted repeatedly.
+      The App Info screen collects reference information about the release.
     </p>
-
-    <p>
-      When concurrent edits produce a conflict, use the
-      application's conflict-resolution workflow rather than
-      manually combining competing versions in separate files.
-    </p>
-
-
-    <h3>
-      Export
-    </h3>
-
-    <p>
-      Project data can be exported for downstream analysis.
-      TraitTrack supports CSV export and database-oriented
-      workflows, as well as media bundles and project backups.
-    </p>
-
-
-    <div class="callout">
-
-      <strong>
-        Recommended workflow:
-      </strong>
-
-      Collect → Synchronize → Review → Quality control →
-      Export → Analyze
-
-    </div>
-
+    <div class="video-placeholder"><strong>Video 11</strong><br><span>videos/video11.mp4</span></div>
   </section>
 
 
-
-  <!-- =====================================================
-       FIELD DATA
-       ===================================================== -->
 
   <section id="field-data">
-
-    <h2>
-      Field Data
-    </h2>
-
+    <h2>Field Data</h2>
     <p class="lead">
-      TraitTrack is designed to make structured phenotypic
-      observations practical to collect directly in the field.
+      Field Data contains the tools used to prepare plots and traits, collect observations,
+      and capture field measurements.
     </p>
 
-
-    <h3>
-      Collect an observation
-    </h3>
-
-    <div class="steps">
-
-      <div class="step">
-
-        <h3>
-          1. Select the project
-        </h3>
-
-        <p>
-          Open the project associated with the experiment.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <h3>
-          2. Navigate to the experimental unit
-        </h3>
-
-        <p>
-          Select the appropriate plot, entry, or other
-          experimental unit.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <h3>
-          3. Select the trait
-        </h3>
-
-        <p>
-          Choose the trait being measured.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <h3>
-          4. Record the value
-        </h3>
-
-        <p>
-          Enter the observation using the trait's defined format.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <h3>
-          5. Add supporting information
-        </h3>
-
-        <p>
-          When appropriate, attach photographs, location
-          information, notes, or other supported media.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <h3>
-          6. Save and continue
-        </h3>
-
-        <p>
-          Save the observation and proceed to the next
-          experimental unit.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <h3>
-      Working offline
-    </h3>
-
+    <h3 id="main-menu">Main Menu</h3>
     <p>
-      Field sites may have unreliable or nonexistent network
-      connectivity. TraitTrack is designed so that collection
-      can continue when a connection is unavailable, with
-      synchronization occurring when connectivity returns.
+      When TraitTrack opens, the Main Menu is the first screen you see. At the top is the app
+      title, followed by three counters that give an at-a-glance snapshot of the current work:
     </p>
-
-
-    <div class="callout warning">
-
-      <strong>
-        Before leaving for the field:
-      </strong>
-
-      Make sure the project information required for collection
-      is available on the device. Do not assume that a device
-      will be able to download project information after you
-      arrive at a location without connectivity.
-
-    </div>
-
-
-    <h3>
-      Photographs and media
-    </h3>
-
-    <p>
-      Photographs can be attached to observations to preserve
-      visual evidence of the phenotype or field condition.
-      Images can be especially useful for disease scoring,
-      abiotic stress, developmental stages, and quality control.
-    </p>
-
-
-    <h3>
-      Location and GNSS
-    </h3>
-
-    <p>
-      TraitTrack can use iOS Core Location to record GNSS
-      coordinates for location-aware traits. Projects should
-      document how location information is expected to be
-      interpreted and used.
-    </p>
-
-
-    <h3>
-      Field data best practices
-    </h3>
-
     <ul>
-
-      <li>
-        Use consistent trait definitions and units.
-      </li>
-
-      <li>
-        Confirm that you are recording against the correct
-        experimental unit.
-      </li>
-
-      <li>
-        Attach photographs when visual evidence will be useful.
-      </li>
-
-      <li>
-        Synchronize whenever a stable connection is available.
-      </li>
-
-      <li>
-        Check for incomplete or questionable observations before
-        leaving the field.
-      </li>
-
+      <li><strong>Active plots</strong> — how many plots are ready for collection.</li>
+      <li><strong>Traits on the deck</strong> — how many traits are queued for the next field run.</li>
+      <li><strong>Values saved</strong> — how many observations have been recorded so far.</li>
     </ul>
+    <p>
+      Below the counters are the twelve menus that organize every feature in the app. The first
+      four handle field data (plots, traits, collection, export). The remaining eight handle
+      project management, settings, and reference (progress, team coordination, tools, settings,
+      updates, sync, and app information).
+    </p>
+    <div class="video-placeholder"><strong>Video 1</strong><br><span>videos/video1.mp4</span></div>
 
+    <h3 id="plot-library">Plot Library</h3>
+    <p class="lead">Maps, entries, archives</p>
+    <p>
+      The Plot Library stores every field or trial imported into TraitTrack. From here you can
+      open, sort, share, or archive the plot libraries you work with.
+    </p>
+    <h4>Top-bar controls</h4>
+    <ul>
+      <li><strong>Sort menu</strong> — sort libraries by Import format, Edit date, Sync date,
+      Export date, or Name. The same menu includes Expand All Groups and Collapse All Groups.</li>
+      <li><strong>View toggle</strong> — switch between grouped view and list view.</li>
+      <li><strong>Share All</strong> — export every library at once.</li>
+      <li><strong>Save</strong> — keeps changes made to the current view.</li>
+    </ul>
+    <h4>Working with a plot library</h4>
+    <p>Tap Select All, or tap an individual library, to enable batch actions:</p>
+    <ul>
+      <li><strong>Share Package</strong> — export the selected libraries.</li>
+      <li><strong>Group</strong> — rename the group the libraries belong to, or archive them.</li>
+    </ul>
+    <h4>Opening a library</h4>
+    <p>Tap a training sample (CSV file) to see its full record card:</p>
+    <ul>
+      <li>The file name and plot-count icon.</li>
+      <li>An info icon listing imported plot-information fields: plot_id, row, column, plot,
+        replicate, germplasm, and pedigree.</li>
+      <li>Rename and Color controls.</li>
+      <li>A trait count and a sort menu with the available fields.</li>
+      <li>A barcode-scan target labeled <strong>plotid</strong>. Search ID → Attribute lets you
+        choose plot or plot_id, with an option to apply the choice to all compatible fields.</li>
+    </ul>
+    <p>
+      The record card also shows when the library was Imported, Edited, Exported, and Synced.
+      <strong>Start Field Run</strong> at the bottom opens the Collect screen.
+    </p>
+    <div class="video-placeholder"><strong>Video 6</strong><br><span>videos/video6.mp4</span></div>
+
+    <h3 id="measure-kit">Measure Kit</h3>
+    <p class="lead">Traits and formats</p>
+    <p>
+      The Measure Kit is where you decide which traits are visible during a field run.
+    </p>
+    <ul>
+      <li><strong>Select All / Deselect All</strong> buttons appear at the top. Deselect All keeps
+        the first selected trait active so collection always has at least one trait available.</li>
+      <li>Each trait row shows the trait name, up/down arrows for reordering, and a three-dot menu
+        for removal.</li>
+      <li>The green <strong>+</strong> icon opens New Trait, where you choose from available trait
+        categories and add a new trait.</li>
+    </ul>
+    <p>The order of traits here is the order in which they appear on the collection screen.</p>
+    <div class="video-placeholder"><strong>Video 4</strong><br><span>videos/video4.mp4</span></div>
+
+    <h3 id="field-run">Field Run</h3>
+    <p class="lead">Capture values / media</p>
+    <p>
+      The Field Run screen is the working screen used in the field. It opens on the current
+      training sample and shows plot progress at the top.
+    </p>
+    <h4>Trait selector</h4>
+    <p>The drop-down lists every trait defined in the Measure Kit. Each row includes:</p>
+    <ul>
+      <li>Up/down arrows to reorder traits on the fly.</li>
+      <li>A three-dot menu with Edit trait, Copy trait, and Delete trait.</li>
+      <li>A caption explaining that selected traits appear during collection and at least one
+        trait must remain selected.</li>
+    </ul>
+    <h4>Navigation</h4>
+    <ul>
+      <li><strong>Green arrows</strong> move between traits.</li>
+      <li><strong>Black four-direction arrows</strong> move between plots by row or range while
+        staying on the same trait.</li>
+      <li><strong>Navigate → Search</strong> provides filtered record search and quick text search.</li>
+      <li><strong>Data Grid</strong> opens a table-style view of the current run.</li>
+    </ul>
+    <h4>Record tools</h4>
+    <ul>
+      <li>Plot photo</li>
+      <li>Notes and files</li>
+      <li>Voice note</li>
+      <li>Lock data / Freeze data</li>
+    </ul>
+    <h4>Review</h4>
+    <ul>
+      <li><strong>Save plot</strong> commits the current entries.</li>
+      <li><strong>Summary</strong> opens a plot-level review card.</li>
+    </ul>
+    <h4>Field Detail summary</h4>
+    <p>
+      Once a plot is saved, the Field Detail panel shows the trait count, color tag, and a
+      Completion overview with a legend explaining the progress icons. Share Package can also
+      be invoked from this panel.
+    </p>
+    <div class="video-placeholder"><strong>Video 12</strong><br><span>videos/video12.mp4</span></div>
+
+    <h3 id="seed-counter">Seed Counter</h3>
+    <p class="lead">Count seeds from a photo</p>
+    <p>
+      The Seed Counter uses a photograph to estimate the number of seeds in a sample. The app
+      reminds users to review highlighted seeds before saving.
+    </p>
+    <h4>Identify the sample</h4>
+    <ul>
+      <li><strong>Responsible person</strong> — the collector performing the count.</li>
+      <li><strong>Scan Plot or Accession Barcode</strong> — jump directly to a plot.</li>
+      <li><strong>Search Barcode</strong> or enter Plot number, Accession number, and Genotype or accession name.</li>
+      <li><strong>Species</strong> — Corn/Maize, Sorghum, Rice, Wheat, Arabidopsis, or Other.</li>
+    </ul>
+    <h4>Photograph tips</h4>
+    <ul>
+      <li>Use a plain contrasting background.</li>
+      <li>Spread seeds with minimal overlap.</li>
+      <li>Avoid shadows and glare; keep the phone parallel to the surface.</li>
+    </ul>
+    <h4>Capture and confirm</h4>
+    <ul>
+      <li><strong>Take Seed Picture</strong> or <strong>Choose Existing Picture</strong>.</li>
+      <li><strong>Confirm &amp; Save Seed Count</strong> commits the result after checking that an
+        analyzed picture, responsible person, and plot/accession/barcode identifier are present.</li>
+    </ul>
+    <p>Seed counts can be exported individually as CSV, PDF, JSON, or ZIP.</p>
+    <div class="video-placeholder"><strong>Video 19</strong><br><span>videos/video19.mp4</span></div>
   </section>
-
 
 
   <!-- =====================================================
@@ -1996,7 +1903,10 @@ section {
      JAVASCRIPT
      ======================================================= -->
 
-<script src="TraitTrack_website_js_v2.js"></script>
+<!-- Cursor-following dog -->
+<div class="cursor-dog" id="cursorDog">
+  <img src="../jamesschnable.jpg" alt="">
+</div>
 
 </body>
 </html>
