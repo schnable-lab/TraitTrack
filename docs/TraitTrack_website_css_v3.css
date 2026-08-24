@@ -601,3 +601,90 @@ code {
     font-size: 20px;
   }
 }
+
+.video-placeholder {
+    margin: 18px 0 28px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: #f7f9f8;
+    color: var(--text);
+}
+
+.video-placeholder strong {
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* =========================================================
+   NUMBERED GUIDE / VISUAL PLACEHOLDERS
+   Replaces embedded instructional videos
+   ========================================================= */
+
+.guide-gif {
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.guide-placeholder {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin: 24px 0 32px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f7f9f8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.guide-placeholder .guide-gif {
+  display: block;
+  width: 220px;
+  flex: 0 0 220px;
+  max-width: none;
+  height: auto;
+  max-height: 220px;
+  object-fit: cover;
+  margin: 0;
+  border: none;
+  border-right: 1px solid var(--border);
+  border-radius: 0;
+  background: #eef3f0;
+}
+
+.guide-placeholder-content {
+  flex: 1;
+  min-width: 0;
+  padding: 20px 22px;
+}
+
+.guide-placeholder-content strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.guide-placeholder-content p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+  .guide-placeholder {
+    flex-direction: column;
+  }
+
+  .guide-placeholder .guide-gif {
+    width: 100%;
+    flex: 0 0 auto;
+    max-height: 200px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
