@@ -633,7 +633,8 @@ code {
 
 .guide-placeholder {
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  justify-content: flex-start;
   gap: 0;
   margin: 24px 0 32px;
   border: 1px solid var(--border);
@@ -645,11 +646,11 @@ code {
 
 .guide-placeholder .guide-gif {
   display: block;
-  width: 220px;
-  flex: 0 0 220px;
+  width: 640px;
+  flex: 0 0 640px;
   max-width: none;
   height: auto;
-  max-height: 220px;
+  max-height: 600px;
   object-fit: cover;
   margin: 0;
   border: none;
@@ -662,17 +663,19 @@ code {
   flex: 1;
   min-width: 0;
   padding: 20px 22px;
+  text-align: left;
 }
 
 .guide-placeholder-content strong {
   display: block;
-  margin-bottom: 6px;
-  font-size: 15px;
+  margin-bottom: 10px;
+  font-size: 24px;
 }
 
 .guide-placeholder-content p {
   margin: 0;
-  line-height: 1.6;
+  font-size: 19px;
+  line-height: 1.65;
 }
 
 @media (max-width: 650px) {
@@ -683,8 +686,13 @@ code {
   .guide-placeholder .guide-gif {
     width: 100%;
     flex: 0 0 auto;
-    max-height: 200px;
+    max-height: 260px;
     border-right: none;
     border-bottom: 1px solid var(--border);
+  }
+
+  .guide-placeholder-content {
+    flex: 1 1 auto;
+    width: 100%;
   }
 }
