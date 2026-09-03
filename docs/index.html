@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Beginner tutorial for installing TraitTrack, creating projects, collaborating, collecting field traits, and using every major app screen."
+    />
+    <title>TraitTrack Beginner Tutorial</title>
+    <link rel="icon" href="media/traittrack-app-icon.png" />
+    <link rel="stylesheet" href="TraitTrack_website_css_v3.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="TraitTrack tutorial home">
+        <img src="media/traittrack-app-icon.png" alt="" class="brand-icon" />
+        <span>TraitTrack</span>
+      </a>
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Open tutorial menu"
+        aria-expanded="false"
+      >
+        Menu
+      </button>
+      <label class="search" aria-label="Search tutorial">
+        <span>Search</span>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search the tutorial"
+        />
+      </label>
+    </header>
+
+    <div class="layout" id="top">
+      <aside class="sidebar" id="sidebar" aria-label="Tutorial sections">
+        <nav class="nav">
+          <p class="nav-title">Start</p>
+          <a href="#overview">Overview</a>
+          <a href="#install">Install the app</a>
+          <a href="#quick-start">Five minute setup</a>
+          <p class="nav-title">Projects</p>
+          <a href="#personal-project">Personal project</a>
+          <a href="#team-project">Collaborated project</a>
+          <a href="#plot-library">Plot Library</a>
+          <a href="#create-field">Create a field</a>
+          <a href="#measure-kit">Measure Kit</a>
+          <a href="#new-trait">Create a trait</a>
+          <p class="nav-title">Collect</p>
+          <a href="#field-run">Field Run</a>
+          <a href="#field-run-navigation">Move through plots</a>
+          <a href="#capture-traits">Capture traits</a>
+          <a href="#save-review">Save and review</a>
+          <p class="nav-title">More Tools</p>
+          <a href="#share-package">Share Package</a>
+          <a href="#progress-board">Progress Board</a>
+          <a href="#settings">Settings</a>
+          <a href="#utilities">Utilities</a>
+          <a href="#reference">Reference</a>
+          <a href="#support">Support</a>
+          <a href="#citation">Citation</a>
+        </nav>
+      </aside>
+
+      <main>
+        <section class="hero" id="overview">
+          <div class="hero-copy">
+            <p class="eyebrow">TRAITRACK GUIDE</p>
+            <h1>Collect. Collaborate. Track.</h1>
+            <p class="lead">
+              TraitTrack is a collaborative field-phenotyping application
+              designed to help researchers collect, synchronize, manage, and
+              review plant trait data directly during field experiments.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#install">Start tutorial</a>
+              <a class="button ghost" href="#field-run">Go to Field Run</a>
+            </div>
+          </div>
+          <div class="hero-media">
+            <img
+              src="media/traittrack-overview-poster.png"
+              alt="TraitTrack poster showing smart field data collection for better breeding"
+              class="field-art overview-poster"
+            />
+          </div>
+        </section>
+
+        <p class="no-results" id="noResults">
+          No tutorial sections match that search.
+        </p>
+
+        <section id="what-is-traittrack">
+          <p class="section-kicker">What the app does</p>
+          <h2>TraitTrack in one minute</h2>
+          <p class="lead">
+            TraitTrack is an iPhone and iPad app for plant phenotyping. It helps
+            you import a field map, choose traits, walk through plots, collect
+            values and media, and export or sync the finished observations.
+          </p>
+          <div class="feature-grid">
+            <article class="feature">
+              <span class="feature-tag">Field map</span>
+              <h3>Know where you are</h3>
+              <p>
+                Plots can include identifiers such as <code>plot_id</code>,
+                <code>row</code>, <code>column</code>, <code>plot</code>,
+                <code>replicate</code>, <code>germplasm</code>, and
+                <code>pedigree</code>.
+              </p>
+            </article>
+            <article class="feature">
+              <span class="feature-tag">Traits</span>
+              <h3>Measure the right things</h3>
+              <p>
+                Traits can be numeric, categorical, percent, date, boolean,
+                text, photo, counter, location, angle, audio, video, disease
+                rating, GNSS, and more.
+              </p>
+            </article>
+            <article class="feature">
+              <span class="feature-tag">Field Run</span>
+              <h3>Collect without losing your place</h3>
+              <p>
+                The Field Run screen keeps the current plot and current trait
+                visible while you move through the field.
+              </p>
+            </article>
+            <article class="feature">
+              <span class="feature-tag">Team</span>
+              <h3>Work alone or together</h3>
+              <p>
+                Use a personal local project for solo work, or connect a team
+                workspace when several devices need to sync the same project.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="install">
+          <p class="section-kicker">Step 1</p>
+          <h2>Install the TraitTrack app</h2>
+          <p class="lead"></p>
+
+          <div class="app-download">
+            <img
+              src="media/traittrack-app-icon.png"
+              alt="TraitTrack app icon"
+              class="download-app-icon"
+            />
+            <div>
+              <h3>TraitTrack for iPhone</h3>
+              <p>
+                Download the app, open it once, and confirm the main menu loads
+                before you go to the field.
+              </p>
+            </div>
+            <a
+              class="app-store-badge"
+              href="https://apps.apple.com/us/app/traittrack/id6798378635"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download TraitTrack on the App Store"
+            >
+              <svg class="apple-mark" viewBox="0 0 24 28" aria-hidden="true">
+                <path
+                  d="M19.8 14.8c0-3.2 2.6-4.8 2.7-4.9-1.5-2.2-3.8-2.5-4.6-2.5-1.9-.2-3.8 1.1-4.7 1.1-1 0-2.5-1.1-4.1-1.1-2.1 0-4 1.2-5.1 3.1-2.2 3.8-.6 9.5 1.6 12.6 1.1 1.5 2.3 3.2 3.9 3.1 1.6-.1 2.2-1 4.1-1s2.4 1 4.1 1c1.7 0 2.8-1.5 3.8-3 1.2-1.7 1.7-3.4 1.7-3.5-.1 0-3.3-1.3-3.4-4.9zM16.6 5.4c.9-1 1.4-2.5 1.3-3.9-1.2.1-2.7.8-3.6 1.8-.8.9-1.5 2.4-1.3 3.8 1.3.1 2.7-.7 3.6-1.7z"
+                />
+              </svg>
+              <span><small>Download on the</small>App Store</span>
+            </a>
+          </div>
+          <div class="media-row">
+            <figure class="phone-media">
+              <img
+                src="images/1.gif"
+                alt="Opening TraitTrack from the iPhone home screen"
+              />
+            </figure>
+            <div class="steps compact">
+              <article class="step">
+                <h3>Download from the App Store</h3>
+                <p>
+                  Tap the App Store button above, then install TraitTrack on the
+                  iPhone you will use for data collection.
+                </p>
+              </article>
+              <article class="step">
+                <h3>Open TraitTrack app once downloaded</h3>
+                <p>
+                  Launch the app while you still have a good internet
+                  connection. Confirm that the main menu opens.
+                </p>
+              </article>
+              <article class="step">
+                <h3>Allow needed permissions</h3>
+                <p>
+                  Allow camera access for photos and barcode scanning, location
+                  access for location traits, and microphone access for voice
+                  notes when your project uses them.
+                </p>
+              </article>
+            </div>
+          </div>
+          <div class="callout">
+            <strong>Before you leave for the field:</strong> Open the app,
+            confirm the correct field and traits are loaded, and make sure your
+            battery is charged. Collection works best when the project is
+            prepared ahead of time.
+          </div>
+        </section>
+
+        <section id="quick-start">
+          <p class="section-kicker">Beginner path</p>
+          <h2>Five minute setup checklist</h2>
+          <ol class="checklist">
+            <li>
+              Open TraitTrack and check the counters at the top: active plots,
+              traits on deck, and values saved.
+            </li>
+            <li>
+              Open <strong>Plot Library</strong> and select or import the field
+              map you will use.
+            </li>
+            <li>
+              Open <strong>Measure Kit</strong> and make sure the traits you
+              want are selected.
+            </li>
+            <li>
+              For team work, open <strong>Team Sync</strong> or
+              <strong>Settings > Team Workspace</strong> and sync once.
+            </li>
+            <li>
+              Open <strong>Field Run</strong>, enter one test value, save it,
+              then check the Progress Board.
+            </li>
+          </ol>
+          <figure class="wide-video">
+            <video
+              controls
+              muted
+              playsinline
+              preload="metadata"
+              poster="media/screenshots/2-poster.jpg"
+            >
+              <source src="media/videos/2.mp4" type="video/mp4" />
+            </video>
+          </figure>
+        </section>
+
+        <section id="personal-project">
+          <p class="section-kicker">Project setup</p>
+          <h2>Create a personal project</h2>
+          <p class="lead">
+            A personal project stays on your device until you export it
+            manually. This is the simplest choice for practice, training, and
+            single-person collection.
+          </p>
+          <div class="tutorial-grid">
+            <article class="tutorial-card">
+              <h3>1. Add a field</h3>
+              <p>
+                Go to <strong>Plot Library</strong>. Choose an existing training
+                field or import a field file. A good field file has one row per
+                plot and columns such as plot ID, row, range or column,
+                germplasm, and pedigree.
+              </p>
+            </article>
+            <article class="tutorial-card">
+              <h3>2. Add traits</h3>
+              <p>
+                Go to <strong>Measure Kit</strong>. Select the traits you want
+                to collect. The selected order is the order used in Field Run.
+              </p>
+            </article>
+            <article class="tutorial-card">
+              <h3>3. Start collecting</h3>
+              <p>
+                Open <strong>Field Run</strong>. The app will show the current
+                plot, the current trait, and the input control for that trait
+                type.
+              </p>
+            </article>
+          </div>
+          <div class="callout">
+            <strong>Beginner tip:</strong> use a small practice field first.
+            Save a few fake observations, export them, and confirm the file
+            looks right before collecting real data.
+          </div>
+        </section>
+
+        <section id="team-project">
+          <p class="section-kicker">Team setup</p>
+          <h2>Set up a collaborated project</h2>
+          <p class="lead">
+            A collaborated project connects multiple devices to the same
+            TraitTrack sync backend. Use this when a field crew is collecting
+            the same project together.
+          </p>
+          <div class="media-row reverse">
+            <figure class="phone-media">
+              <img src="images/2.gif" alt="Team Sync screen walkthrough" />
+            </figure>
+            <div class="steps compact">
+              <article class="step">
+                <h3>Check the backend connection</h3>
+                <p>
+                  Open <strong>Team Sync</strong> or
+                  <strong>Settings > Team Workspace</strong>. Enter the
+                  TraitTrack sync API URL from the project owner, then use
+                  <strong>Check Backend</strong>.
+                </p>
+              </article>
+              <article class="step">
+                <h3>Sign in</h3>
+                <p>
+                  Use <strong>Sign In to Collaboration</strong>. Confirm the
+                  collector name and device label are correct because they
+                  appear in team records and exports.
+                </p>
+              </article>
+              <article class="step">
+                <h3>Create or join the project</h3>
+                <p>
+                  The owner creates the shared project and invite. Teammates
+                  scan the invite QR code or paste the invite code.
+                </p>
+              </article>
+              <article class="step">
+                <h3>Sync before collecting</h3>
+                <p>
+                  Tap <strong>Sync Now</strong> once. While the app is open,
+                  active devices sync periodically and send observations, media
+                  references, and prepared exports through the team workspace.
+                </p>
+              </article>
+            </div>
+          </div>
+          <div class="warning">
+            <strong
+              >Do not paste a cloud document link as the backend URL.</strong
+            >
+            Google Drive, Docs, iCloud, Dropbox, and OneDrive links can help
+            share files, but the Team Workspace needs a TraitTrack sync API
+            endpoint.
+          </div>
+        </section>
+
+        <section id="plot-library">
+          <p class="section-kicker">Field preparation</p>
+          <h2>Use Plot Library</h2>
+          <p class="lead">
+            Plot Library is where your field maps live. Use it to open a field,
+            inspect imported columns, rename or color a library, and start a
+            Field Run.
+          </p>
+          <div class="media-row">
+            <figure class="phone-media">
+              <img src="images/6.gif" alt="Plot Library walkthrough" />
+            </figure>
+            <div>
+              <h3>What to check</h3>
+              <ul class="plain-list">
+                <li>
+                  <strong>Field name:</strong> make sure you selected the
+                  correct trial or training sample.
+                </li>
+                <li>
+                  <strong>Plot count:</strong> confirm the number of plots looks
+                  reasonable.
+                </li>
+                <li>
+                  <strong>Imported columns:</strong> look for plot identifiers,
+                  row, column or range, replicate, germplasm, and pedigree.
+                </li>
+                <li>
+                  <strong>Search ID:</strong> choose the identifier used for
+                  barcode or quick plot lookup, such as <code>plot_id</code>.
+                </li>
+                <li>
+                  <strong>Start Field Run:</strong> use this when the field and
+                  traits are ready.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="create-field">
+          <p class="section-kicker">New field</p>
+          <h2>Create a new field</h2>
+          <p class="lead">
+            A field is the list of plots or observation units you will visit
+            during collection. In TraitTrack, you can import an existing field
+            file or build a simple field layout directly in the app.
+          </p>
+
+          <div class="media-row reverse">
+            <figure class="phone-media">
+              <img src="images/6.gif" alt="Using Plot Library to add a field" />
+            </figure>
+            <div class="steps compact">
+              <article class="step">
+                <h3>Open Plot Library</h3>
+                <p>
+                  From the main menu, tap <strong>Plot Library</strong>. This is
+                  where TraitTrack keeps imported fields, archived fields, and
+                  field actions.
+                </p>
+              </article>
+              <article class="step">
+                <h3>Tap the add button</h3>
+                <p>
+                  Use the round <strong>+</strong> button. TraitTrack lets you
+                  add a field from a local file, iCloud Drive, BrAPI when it is
+                  enabled, or a new field made inside the app.
+                </p>
+              </article>
+              <article class="step">
+                <h3>Import a field file</h3>
+                <p>
+                  Choose a CSV, text, or spreadsheet file. When TraitTrack shows
+                  the import options, select the worksheet if needed and choose
+                  the column that uniquely identifies each plot, such as
+                  <code>plot_id</code>.
+                </p>
+              </article>
+              <article class="step">
+                <h3>Create a field from scratch</h3>
+                <p>
+                  Choose <strong>Create New</strong>, enter a field name, set
+                  the number of rows and columns, then pick the start corner,
+                  travel direction, and collection pattern.
+                </p>
+              </article>
+              <article class="step">
+                <h3>Preview and create</h3>
+                <p>
+                  Check the preview grid before saving. The preview helps you
+                  confirm the plot order before TraitTrack adds the field to
+                  Plot Library.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <figure class="wide-video">
+            <video
+              controls
+              muted
+              playsinline
+              preload="metadata"
+              poster="media/screenshots/6-poster.jpg"
+            >
+              <source src="media/videos/6.mp4" type="video/mp4" />
+            </video>
+          </figure>
+
+          <div class="callout">
+            <strong>Field file tip:</strong> keep one plot per row and use clear
+            headers. A beginner-friendly file usually includes plot ID, row,
+            column or range, plot number, replicate, germplasm, and pedigree.
+          </div>
+        </section>
+
+        <section id="measure-kit">
+          <p class="section-kicker">Trait preparation</p>
+          <h2>Use Measure Kit</h2>
+          <p class="lead">
+            Measure Kit controls which traits appear during collection. Keep
+            this screen simple before a field day: only turn on the traits your
+            crew should collect.
+          </p>
+          <div class="media-row reverse">
+            <figure class="phone-media">
+              <img src="images/4.gif" alt="Measure Kit walkthrough" />
+            </figure>
+            <div>
+              <h3>Common actions</h3>
+              <ul class="plain-list">
+                <li>
+                  <strong>Select All:</strong> make every trait available in
+                  Field Run.
+                </li>
+                <li>
+                  <strong>Deselect All:</strong> hide most traits. TraitTrack
+                  keeps at least one selected so collection can still run.
+                </li>
+                <li>
+                  <strong>Up and down arrows:</strong> reorder traits so the
+                  fastest measurements come in the order your crew expects.
+                </li>
+                <li><strong>More menu:</strong> remove or manage a trait.</li>
+                <li>
+                  <strong>Plus button:</strong> open New Trait and choose the
+                  trait type.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="new-trait">
+          <p class="section-kicker">Trait creation</p>
+          <h2>Create a new trait</h2>
+          <p class="lead">
+            Create a trait when the project needs a measurement that is not
+            already in Measure Kit.
+          </p>
+          <div class="steps">
+            <article class="step">
+              <h3>Open Measure Kit</h3>
+              <p>
+                From the main menu, tap <strong>Measure Kit</strong>, then tap
+                the green <strong>+</strong> button.
+              </p>
+            </article>
+            <article class="step">
+              <h3>Choose the trait type</h3>
+              <p>
+                Pick the input style that matches the measurement. For example,
+                use Numeric for plant height, Categorical for color, Percent for
+                lodging, Date for flowering, Boolean for insect damage, Text for
+                notes, Photo for pictures, and Counter for plants.
+              </p>
+            </article>
+            <article class="step">
+              <h3>Name the trait clearly</h3>
+              <p>
+                Use short names that make sense in the field, such as
+                <code>height</code>, <code>color</code>, <code>lodging</code>,
+                <code>flowering</code>, <code>notes</code>, or
+                <code>plants</code>.
+              </p>
+            </article>
+            <article class="step">
+              <h3>Add units or categories</h3>
+              <p>
+                For measured values, add units such as cm or degrees. For
+                categorical traits, enter the allowed choices before collection
+                starts.
+              </p>
+            </article>
+            <article class="step">
+              <h3>Save and test</h3>
+              <p>
+                Return to Field Run and enter one practice value. Confirm the
+                trait appears in the right order and uses the right input
+                control.
+              </p>
+            </article>
+          </div>
+          <div class="trait-types">
+            <span>Audio</span><span>Boolean</span><span>Categorical</span
+            ><span>Multicat</span><span>Counter</span><span>Date</span
+            ><span>Location</span><span>Numeric</span><span>Percent</span
+            ><span>Text</span><span>Angle</span><span>Disease Rating</span
+            ><span>GNSS</span><span>Photo</span><span>Zebra Label Print</span>
+          </div>
+        </section>
+
+        <section id="field-run">
+          <p class="section-kicker">Collect data</p>
+          <h2>Capture traits in Field Run</h2>
+          <p class="lead">
+            Field Run is the screen you use while standing in the field. It
+            shows the current plot, the active trait, the value entry area, plot
+            movement controls, record tools, and review actions.
+          </p>
+          <figure class="wide-video">
+            <video
+              controls
+              muted
+              playsinline
+              preload="metadata"
+              poster="media/screenshots/8-poster.jpg"
+            >
+              <source src="media/videos/8.mp4" type="video/mp4" />
+            </video>
+          </figure>
+        </section>
+
+        <section id="field-run-navigation">
+          <p class="section-kicker">Stay oriented</p>
+          <h2>Move through plots and traits</h2>
+          <div class="tutorial-grid">
+            <article class="tutorial-card">
+              <h3>Trait arrows</h3>
+              <p>
+                Use the green trait arrows to move to the previous or next trait
+                on the same plot.
+              </p>
+            </article>
+            <article class="tutorial-card">
+              <h3>Plot arrows</h3>
+              <p>
+                Use the plot movement arrows to move through rows and ranges
+                while keeping your trait context.
+              </p>
+            </article>
+            <article class="tutorial-card">
+              <h3>Search</h3>
+              <p>
+                Use <strong>Navigate > Search</strong> when you need to jump
+                directly to a plot by text or identifier.
+              </p>
+            </article>
+            <article class="tutorial-card">
+              <h3>Data Grid</h3>
+              <p>
+                Open Data Grid when you want a table-style check of the current
+                run.
+              </p>
+            </article>
+          </div>
+          <div class="callout">
+            <strong>Beginner tip:</strong> say the plot number out loud before
+            saving if two people are collecting nearby. It prevents accidental
+            entries on the wrong plot.
+          </div>
+        </section>
+
+        <section id="capture-traits">
+          <p class="section-kicker">Enter observations</p>
+          <h2>Capture common trait types</h2>
+          <div class="feature-grid">
+            <article class="feature">
+              <h3>Numeric, percent, angle, and counter</h3>
+              <p>
+                Tap the value field, enter the number, then save. Use units
+                consistently, such as cm for height or degrees for angle.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Categorical and boolean</h3>
+              <p>
+                Select the category or yes/no value that matches the plot.
+                Define categories before the field day so everyone scores the
+                same way.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Date</h3>
+              <p>
+                Use the date picker or date controls for flowering and timing
+                traits. The date controls adjust and save the date without
+                moving you to another trait.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Photos, video, audio, and notes</h3>
+              <p>
+                Capture supporting media from the record tools or media trait
+                input. Add notes when a value needs explanation.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="save-review">
+          <p class="section-kicker">Finish a plot</p>
+          <h2>Save, review, and fix mistakes</h2>
+          <ol class="checklist">
+            <li>
+              After entering the trait value, confirm the plot and trait names
+              at the top of the screen.
+            </li>
+            <li>Tap <strong>Save plot</strong> when the plot is complete.</li>
+            <li>
+              Open <strong>Summary</strong> to review plot-level progress and
+              saved values.
+            </li>
+            <li>
+              If something is wrong, return to the plot, correct the value, and
+              save again.
+            </li>
+            <li>
+              At breaks or the end of the day, check
+              <strong>Progress Board</strong> and run sync or export.
+            </li>
+          </ol>
+        </section>
+
+        <section id="share-package">
+          <p class="section-kicker">Export</p>
+          <h2>Share Package</h2>
+          <p class="lead">
+            Share Package exports project data for review, analysis, or backup.
+            You can open it from Plot Library, Field Run, or the main menu.
+          </p>
+          <div class="media-row">
+            <figure class="phone-media">
+              <img src="images/15.gif" alt="Share Package walkthrough" />
+            </figure>
+            <div>
+              <h3>Choose the right format</h3>
+              <ul class="plain-list">
+                <li>
+                  <strong>Database or long format:</strong> best for full
+                  traceability. Each row is an observation with metadata such as
+                  trait, value, timestamp, person, device name, and attached
+                  media.
+                </li>
+                <li>
+                  <strong>Table or wide format:</strong> best for quick
+                  spreadsheet review. Each trait becomes a column beside plot
+                  identifiers.
+                </li>
+                <li>
+                  <strong>Bundle media:</strong> include photos, videos, and
+                  audio when those files are part of the observation record.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="progress-board">
+          <p class="section-kicker">Check progress</p>
+          <h2>Progress Board</h2>
+          <p class="lead">
+            Progress Board is a read-only dashboard for checking the current
+            project before syncing, exporting, or leaving the field.
+          </p>
+          <div class="media-row reverse">
+            <figure class="phone-media">
+              <img src="images/20.gif" alt="Progress Board walkthrough" />
+            </figure>
+            <div>
+              <h3>What it summarizes</h3>
+              <ul class="plain-list">
+                <li>Fields, entries, observations, and hours.</li>
+                <li>Collectors and recent activity.</li>
+                <li>Photos and media progress.</li>
+                <li>Busiest day and most observed traits.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="settings">
+          <p class="section-kicker">App setup</p>
+          <h2>Settings</h2>
+          <p class="lead">
+            Settings controls identity, collaboration, field tools, interface
+            choices, movement behavior, navigation, audio feedback, BrAPI links,
+            diagnostics, storage, and preview tools.
+          </p>
+          <div class="media-row">
+            <figure class="phone-media">
+              <img src="images/3.gif" alt="Settings walkthrough" />
+            </figure>
+            <div class="settings-list">
+              <p>
+                <strong>Collector Identity:</strong> collector name, check-in,
+                and device label.
+              </p>
+              <p>
+                <strong>Team Workspace:</strong> backend URL, sign-in, invites,
+                sync queue, and shared media.
+              </p>
+              <p>
+                <strong>Field Movement:</strong> auto-advance, plot movement,
+                arrow lanes, and volume buttons.
+              </p>
+              <p>
+                <strong>Breeding API Links:</strong> BrAPI server profiles,
+                imports, connection tests, studies, variables, and observations.
+              </p>
+              <p>
+                <strong>Data Storage:</strong> backup, restore, and clear local
+                workspace.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="utilities">
+          <p class="section-kicker">Other screens</p>
+          <h2>Useful tools in the main menu</h2>
+          <div class="utility-grid">
+            <article>
+              <img
+                src="media/screenshots/team-timers.png"
+                alt="Team Timers screen in TraitTrack"
+              />
+              <h3>Team Timers</h3>
+              <p>
+                Create timers for crews or field tasks. Start timers one by one
+                or all together.
+              </p>
+            </article>
+            <article>
+              <img
+                src="media/screenshots/seed-counter.png"
+                alt="Seed Counter screen in TraitTrack"
+              />
+              <h3>Seed Counter</h3>
+              <p>
+                Photograph a seed sample, review highlighted seeds, and save a
+                count with sample identifiers.
+              </p>
+            </article>
+            <article>
+              <img
+                src="media/screenshots/calculator.png"
+                alt="Calculator screen in TraitTrack"
+              />
+              <h3>Calculator</h3>
+              <p>
+                Run quick field calculations and review calculation history.
+              </p>
+            </article>
+            <article>
+              <img
+                src="media/screenshots/app-information.png"
+                alt="App Info screen in TraitTrack"
+              />
+              <h3>App Info</h3>
+              <p>
+                Read version details, contributor information, tutorials, and
+                citation references.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="reference">
+          <p class="section-kicker">Quick reference</p>
+          <h2>Before a real field run</h2>
+          <div class="reference-table">
+            <div>
+              <strong>Field file</strong
+              ><span
+                >One row per plot, with clear identifiers such as plot ID, row,
+                column or range, germplasm, and pedigree.</span
+              >
+            </div>
+            <div>
+              <strong>Trait list</strong
+              ><span
+                >Only collect traits that are selected in Measure Kit. Put them
+                in the order your team will measure them.</span
+              >
+            </div>
+            <div>
+              <strong>Personal project</strong
+              ><span
+                >Best for one device, training, or work that will be shared
+                later by export.</span
+              >
+            </div>
+            <div>
+              <strong>Collaborated project</strong
+              ><span
+                >Best for multiple devices collecting into a shared project
+                through the TraitTrack sync API.</span
+              >
+            </div>
+            <div>
+              <strong>End of day</strong
+              ><span
+                >Check Progress Board, sync if working with a team, then export
+                a Share Package backup.</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <section id="support">
+          <p class="section-kicker">Support</p>
+          <h2>How to get help</h2>
+          <p class="lead">
+            Use the project support page when you need help with installation,
+            field setup, data collection, exports, or team sync.
+          </p>
+
+          <div class="feature-grid">
+            <article class="feature">
+              <span class="feature-tag">Project page</span>
+              <h3>Open TraitTrack support</h3>
+              <p>
+                Visit the TraitTrack repository for project files, updates, and
+                support information.
+              </p>
+              <a
+                class="text-link"
+                href="https://github.com/sumeetmankar171/TraitTrack"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github.com/sumeetmankar171/TraitTrack
+              </a>
+            </article>
+            <article class="feature">
+              <span class="feature-tag">Report details</span>
+              <h3>Include useful context</h3>
+              <p>
+                Share the app version, device model, iOS version, project name,
+                the screen you were using, and the steps that caused the issue.
+              </p>
+            </article>
+          </div>
+
+          <div class="callout">
+            <strong>For sync problems:</strong> include whether the device was
+            online, whether the backend check passed, and whether other
+            collaborators can sync the same project.
+          </div>
+        </section>
+
+        <section id="citation">
+          <p class="section-kicker">Citation</p>
+          <h2>How to cite TraitTrack</h2>
+          <p class="lead">
+            If TraitTrack supports your field work, include the app citation in
+            methods, acknowledgments, or project documentation.
+          </p>
+
+          <div class="citation-card">
+            <p>
+              TraitTrack. (2026).
+              <em
+                >TraitTrack: Smart field data collection for better breeding</em
+              >
+              (Version 2).
+            </p>
+          </div>
+
+          <div class="reference-table">
+            <div>
+              <strong>App name</strong>
+              <span>TraitTrack</span>
+            </div>
+            <div>
+              <strong>Version shown in App Info</strong>
+              <span>2 (build 1)</span>
+            </div>
+            <div>
+              <strong>Funding note</strong>
+              <span
+                >TraitTrack project is supported by Schnable Lab and University
+                of Nebraska-Lincoln.</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <strong>Copyright © Schnable Lab</strong>
+          <p>TraitTrack tutorial for smart field data collection.</p>
+        </footer>
+      </main>
+    </div>
+
+    <script src="TraitTrack_website_js_v2.js?v=5"></script>
+  </body>
+</html>
