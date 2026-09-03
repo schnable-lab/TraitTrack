@@ -703,6 +703,37 @@ mark.search-mark {
 
 /* Mobile overlay backdrop */
 
+
+/* GitHub support button */
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #6e40c9 0%, #e84393 50%, #f78166 100%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.github-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+  text-decoration: none;
+  color: #fff;
+}
+.github-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: #fff;
+}
+
 .overlay {
 display: none;
 position: fixed;
